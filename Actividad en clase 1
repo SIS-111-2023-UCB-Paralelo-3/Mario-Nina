@@ -1,0 +1,22 @@
+Algoritmo ProgramaHolaMundo
+	Definir nombreUsuario Como Caracter
+	Escribir "Escriba su Nombre"
+	Leer nombredeUsuario
+	Imprimir "Hola Mundo ", nombredeUsuario
+FinAlgoritmo
+
+Algoritmo SumadeDosNumeros
+	Definir a, b Como Entero
+	Definir c, d Como Real
+	Escribir "Escriba dos n�meros"
+	Leer a, b
+	c=a+b
+	Si c%2=0 Entonces
+		d=c*2
+	SiNo
+		d=c/5
+	Fin Si
+	Imprimir "El resultado es: " d
+	
+FinAlgoritmo
+
