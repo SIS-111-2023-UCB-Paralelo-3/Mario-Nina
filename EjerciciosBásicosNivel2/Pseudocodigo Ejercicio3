@@ -1,0 +1,22 @@
+Algoritmo cilindroVolumen
+	
+	Definir radio, altura como Reales
+	Escribir "Ingrese la medida del radio del cilindro"
+	Leer radio
+	Mientras radio <= 0 Hacer
+		Imprimir "ERROR, NO SE PERMITEN NUMEROS MENORES O IGUAL A CERO"
+		Escribir "Ingrese la medida del radio del cilindro"
+		Leer radio
+	FinMientras
+	Escribir "Ingrese la medida de la altura del cilindro"
+	Leer altura
+	Mientras altura <= 0 Hacer
+		Imprimir "ERROR, NO SE PERMITEN NUMEROS MENORES O IGUAL A CERO"
+		Escribir "Ingrese la medida de la altura del cilindro"
+		Leer altura
+	FinMientras
+	volumen = 2*(radio*altura*pi)
+	
+	Imprimir "El volumen del cilindro es " volumen
+	
+FinAlgoritmo
