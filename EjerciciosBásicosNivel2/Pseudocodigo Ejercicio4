@@ -1,0 +1,18 @@
+Algoritmo convertirDíasHorasMinutosSegundos
+	
+	Definir días Como Entero
+	Escribir "Ingrese una cantidad de días"
+	Leer días
+	Mientras días <= 0 Hacer
+		Imprimir "ERROR, NO SE PERMITEN NÚMEROS MENORES O IGUAL A CERO"
+		Escribir "Ingrese una cantidad de días"
+		Leer días
+	FinMientras
+	
+	díaHora = días*24
+	díaMinuto = días*1440
+	díaSegundo = días*86400
+	
+	Imprimir días, " días tiene: " díaHora " horas," díaMinuto " minutos, " díaSegundo "segundos."
+	
+FinAlgoritmo
