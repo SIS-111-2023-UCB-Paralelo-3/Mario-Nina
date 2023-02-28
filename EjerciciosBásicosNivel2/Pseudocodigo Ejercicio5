@@ -1,0 +1,17 @@
+Algoritmo descuento15PorCiento
+	
+	Definir precioProducto como Real
+	Escribir "Ingresar el precio total del producto que desea adquirir"
+	Leer precioProducto
+	Mientras precioProducto <= 0 Hacer
+		Imprimir "ERROR, EL VALOR DEL PRODUCTO DEBE SER MAYOR A CERO"
+		Escribir "Ingresar el precio total del producto que desea adquirir"
+		Leer precioProducto
+	FinMientras
+	
+	descuento = 0.15*precioProducto
+	precioProductoFinal = precioProducto - descuento
+	
+	Imprimir "El precio original del producto es " precioProducto ". Con el descuento del 15% (" descuento ") su precio se rebaja a: " precioProductoFinal
+	
+FinAlgoritmo
