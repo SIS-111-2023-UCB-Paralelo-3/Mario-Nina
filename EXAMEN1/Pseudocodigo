@@ -1,1 +1,59 @@
+Inge no pude acabar a lo que quería llegar
+
+Algoritmo boletaDePago
+	
+	Definir nombre, cargo, mesActual como Caracter
+	Definir sueldo, horasTrabajadas, montoAdicionalAnual, horasExtrasTrabajadas, montoAdicionalHorario como Real
+	Definir carnetIdentidad, añosAntigúedad como Entero
+	Escribir "Ingrese su nombre y el cargo que ejerce en la UCB"
+	Leer nombre, cargo
+	Escribir "Ingrese el mes actual"
+	Leer mesActual
+	Escribir "Ingrese su numero de Carnet de Identidad"
+	Leer carnetIdentidad
+	Escribir "Ingrese el sueldo y carga horaria que acordó cuando empezó en la UCB"
+	Leer sueldo, horasTrabajadas
+	Escribir "Ingrese sus años de antigüedad"
+	Leer añosAntigüedad
+	
+	SI añosAntigüedad > 0 Entonces
+		Escribir "Ingrese el monto adicional por año que se le otorga"
+		Leer montoAdicionalAnual
+		montoAdicionalporAño=montoAdicionalAnual*añosAntigüedad
+		totalIngresos=sueldoTotal+montoAdicionalporAño
+		
+		Escribir "Ingrese horas extras trabajadas en la UCB"
+		Leer horasExtrasTrabajadas
+		SI horasExtrasTrabajadas>0 Entonces
+			Escribir "Ingrese el monto adicional que se le otorga por hora"
+			Leer montoAdicionalHorario
+			montoAdicionalporHora=montoAdicionalHorario*horasExtrasTrabajadas
+		Sino
+			montoAdicionalporHora=0
+		FinSi
+			SI totalIngresos > 13000 Entonces
+			totalEgresos=(sueldo*0.1442)
+			sueldoTotal=totalIngresos-totalEgresos
+			Sino 
+			totalEgresos=(sueldo*0.1392)
+			sueldoTotal=totalIngresos-totalEgresos
+			FinSI
+	
+	Sino
+		montoAdicional=0
+		totalIngresos=sueldoTotal+montoAdicional
+		
+			SI totalIngresos > 13000 Entonces
+			totalEgresos=(sueldo*0.1442)
+			sueldoTotal=totalIngresos-totalEgresos
+			Sino 
+			totalEgresos=(sueldo*0.1392)
+			sueldoTotal=totalIngresos-totalEgresos
+		
+			Imprimir nombre ", su haber básico es: " sueldo ", su total de ingresos es: " totalIngresos ", su total de egresos es: " totalEgresos " y su líquido pagable es " sueldoTotal
+			FinSI
+		
+	FinSi
+
+FinAlgoritmo
 
