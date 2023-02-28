@@ -1,0 +1,37 @@
+Algoritmo porcentajeNiñosNiñas
+	Definir niños,niñas,estudiantes Como Entero
+	Escribir 'Escriba el número de estudiantes en total que hay en el curso'
+	Leer estudiantes
+	Mientras estudiantes<0 Hacer
+		Escribir 'ERROR: NO SE PERMITEN NUMEROS NEGATIVOS DE ESTUDIANTES'
+		Escribir 'Escriba el número de estudiantes en total que hay en el curso'
+		Leer estudiantes
+	FinMientras
+	Escribir 'Escriba el número de niños (varones) que hay en el curso'
+	Leer niños
+	Mientras niños<0 Hacer
+		Escribir 'ERROR: NO SE PERMITEN NUMEROS NEGATIVOS DE NIÑOS'
+		Escribir 'Escriba el número niños (varones) que hay en el curso'
+		Leer niños
+	FinMientras
+	Mientras niños>estudiantes Hacer
+		Escribir 'ERROR: NO ES POSIBLE QUE EL NUMERO DE NIÑOS (VARONES) SOBREPASE AL NUMERO DE ESTUDIANTES'
+		Escribir 'Escriba el número de niños (varones) que hay en el curso'
+		Leer niños
+	FinMientras
+	niñosporcentual <- (niños*100)/estudiantes
+	Escribir 'Escriba el número de niñas que hay en el curso'
+	Leer niñas
+	Mientras niñas<0 Hacer
+		Escribir 'ERROR: NO SE PERMITEN NUMEROS NEGATIVOS DE NIÑAS'
+		Escribir 'Escriba el número de niñas que hay en el curso'
+		Leer niñas
+	FinMientras
+	Mientras niñas>=(estudiantes-niños) Hacer
+		Escribir 'ERROR, NO ES POSIBLE QUE EL NUMERO DE NIÑAS SOBREPASE EL NUMERO DE ESTUDIANTES'
+		Escribir 'Escriba el número de niñas que hay en el curso'
+		Leer niñas
+	FinMientras
+	niñasporcentual <- (niñas*100)/estudiantes
+	Escribir 'En el curso el ',niñosporcentual,'%, son niños y el ',niñasporcentual,'%, son niñas'
+FinAlgoritmo
