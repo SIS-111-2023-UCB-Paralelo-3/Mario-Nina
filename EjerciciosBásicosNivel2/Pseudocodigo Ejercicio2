@@ -1,0 +1,27 @@
+Algoritmo rectánguloAreaYPerímetro
+	
+	Definir base, altura como Real
+	Escribir "Ingrese la medida de la base del rectángulo"
+	Leer base
+	Mientras base <= 0 Hacer
+		Imprimir "ERROR: NO SE PERMITEN NÚMEROS MENORES O IGUAL A CERO"
+		Escribir "Ingrese la medida de la base del rectángulo"
+		Leer base
+	FinMientras
+	Escribir "Ingrese la medida de la altura del rectángulo"
+	Leer altura
+	Mientras altura <= 0 Hacer
+		Imprimir "ERROR, NO SE PERMITEN NÚMEROS MENORES O IGUAL A CERO"
+		Escribir "Ingrese la medida de la altura del rectángulo"
+		Leer altura
+	FinMientras
+	área = base*altura
+	perímetro = (2*altura)+(2*base)
+	
+	Si altura = base Entonces
+		Imprimir "Los valores ingresados indican que es un cuadrado, no un rectángulo"
+	Sino 
+		Imprimir "El área del rectángulo es ", área, " y el perímetro del rectángulo es ", perímetro
+	FinSi
+	
+FinAlgoritmo
