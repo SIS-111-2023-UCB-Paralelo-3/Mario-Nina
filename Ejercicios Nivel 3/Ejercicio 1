@@ -1,0 +1,33 @@
+Algoritmo Sueldo_Mayor_Menor
+	
+	Definir sueldoMínimo, sueldoActual como Real
+	Definir monedaPaís como Caracter
+	
+	Escribir "Ingrese la moneda que se maneja en su país"
+	Leer monedaPaís
+	
+	Escribir "Ingrese el sueldo mínimo que se maneja en su país"
+	Leer sueldoMínimo
+	
+	Mientras sueldoMínimo<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO ACEPTA NÚMEROS INFERIORES A CERO"
+		Escribir "Ingrese el sueldo (mínimo) que se maneja en su país"
+		Leer sueldoMínimo
+	FinMientras
+	
+	Escribir "Ingrese su sueldo actual"
+	Leer sueldoActual
+	
+	Mientras sueldoActual<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO ACEPTA NÚMEROS INFERIORES A CERO"
+		Escribir "Ingrese su sueldo actual"
+		Leer sueldoActual
+	FinMientras
+	
+	Si sueldoActual<sueldoMínimo Entonces
+		Mostrar "Su sueldo actual (" sueldoActual " " monedaPaís ") es menor al sueldo mínimo (" sueldoMínimo " " monedaPaís ")."
+	Sino
+		Mostrar "Su sueldo actual (" sueldoActual " " monedaPaís ") es mayor al sueldo mínimo.(" sueldoMínimo " " monedaPaís ")."
+	FinSi
+	
+FinAlgoritmo
