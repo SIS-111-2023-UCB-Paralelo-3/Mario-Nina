@@ -1,0 +1,36 @@
+Algoritmo Número_Capicúa
+	
+	Definir númeroTresDígitos, dígito1, dígito2, dígito3 Como Entero
+	
+	Repetir
+	Escribir "Ingrese un número de tres cifras"
+	Leer númeroTresDígitos
+	
+	Escribir "Escribe el primer dígito de tu número"
+	Leer dígito1
+	
+	Escribir "Escribe el segundo dígito de tu número"
+	Leer dígito2
+	
+	Escribir "Escribe el tercer dígito de tu número"
+	Leer dígito3
+	
+	númeroTotal=(dígito1*100)+(dígito2*10)+dígito3
+	
+	Si númeroTotal=númeroTresDígitos Entonces
+		Si dígito1=dígito3 Entonces
+		Mostrar "Su número (" númeroTresDígitos ") es capicúa."
+		
+		SiNo
+		Mostrar "Su número (" númeroTresDígitos ") no es capicúa."
+		
+		FinSi
+	
+	SiNo
+		Mostrar "Sus tres cifras no coinciden con su número de tres dígitos. Inténtelo de nuevo"
+		
+	FinSI
+	
+	Hasta Que númeroTotal=númeroTresDígitos
+	
+FinAlgoritmo
