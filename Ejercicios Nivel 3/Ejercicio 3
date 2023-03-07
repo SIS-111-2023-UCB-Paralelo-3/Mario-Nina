@@ -1,0 +1,19 @@
+Algoritmo Letra_Alfabeto
+	
+	Definir letra, vocal Como Caracter
+	
+	Escribir "Ingrese una letra del abecedario español"
+	Leer letra
+	
+	letra=Minusculas(letra)
+	
+	Si letra="a" o letra="e" o letra="i" o letra="o" o letra="u" Entonces
+		Imprimir "Su letra es una vocal"
+		
+	Sino
+		Definir letra como Caracter
+		Imprimir "Su letra es una consonante"
+		
+	FinSi
+	
+FinAlgoritmo
