@@ -1,0 +1,21 @@
+Algoritmo Número_Mayor_500
+	
+	Definir número1 Como Real
+	
+	Repetir
+		Escribir "Ingrese un número mayor a 500"
+		Leer número1
+	
+		Si número1>500
+		número2=número1*0.18
+		Mostrar "El 18% de su número (" número1 ") es: " número2
+		
+		Sino
+		Escribir "Su número es menor a 500. Ingrese un número mayor a 500"
+		Leer número1
+		
+		FinSi
+	
+	Hasta que número1>500
+	
+FinAlgoritmo
