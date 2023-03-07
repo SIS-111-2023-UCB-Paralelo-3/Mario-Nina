@@ -5,15 +5,35 @@ Algoritmo Número_Capicúa
 	Repetir
 	Escribir "Ingrese un número de tres cifras"
 	Leer númeroTresDígitos
+		Mientras númeroTresDígitos<0 Hacer
+		Imprimir "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Ingrese un número de tres cifras"
+		Leer númeroTresDígitos
+		FinMientras
 	
 	Escribir "Escribe el primer dígito de tu número"
 	Leer dígito1
+		Mientras dígito1<0 Hacer
+		Imprimir "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Escribe el primer dígito de tu número"
+		Leer dígito1
+		FinMientras
 	
 	Escribir "Escribe el segundo dígito de tu número"
 	Leer dígito2
+		Mientras dígito2<0 Hacer
+		Imprimir "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Escribe el segundo dígito de tu número"
+		Leer dígito2
+		FinMientras
 	
 	Escribir "Escribe el tercer dígito de tu número"
 	Leer dígito3
+		Mientras dígito3<0 Hacer
+		Imprimir "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Escribe el tercer dígito de tu número"
+		Leer dígito3
+		FinMientras
 	
 	númeroTotal=(dígito1*100)+(dígito2*10)+dígito3
 	
