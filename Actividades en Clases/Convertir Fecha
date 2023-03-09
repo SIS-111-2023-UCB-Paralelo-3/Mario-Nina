@@ -1,0 +1,57 @@
+Algoritmo Convertir_Fecha
+	
+	Definir día, mes, año Como Entero
+	Definir mesFinal Como caracter
+	
+	Escribir "Ingrese la fecha que desea convertir (Ej. 05/08/2004)"
+	Escribir "Ingresar el día (Ej. 05)"
+	Leer día
+	
+	Mientras día<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE VALORES NEGATIVOS."
+		Escribir "Ingresar el día (Ej. 05)"
+		Leer día
+	FinMientras
+	
+	Escribir "Ingresar el mes (Ej.08)"
+	Leer mes
+	
+	Mientras mes<0 
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE VALORES NEGATIVOS"
+		Escribir "Ingresar el mes (Ej.08)"
+		Leer mes
+	FinMientras
+	
+	Mientras mes>12 
+		Mostrar "ERROR. EL AÑO NO TIENE MÁS DE 12 MESES"
+		Escribir "Ingresar el mes (Ej.08)"
+		Leer mes
+	FinMientras
+	
+	Escribir "Ingresar el año (Ej. 2004)"
+	Leer año
+	
+	Mientras año<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE VALORES NEGATIVOS."
+		Escribir "Ingresar el año (Ej. 2004)"
+		Leer año
+	FinMientras
+	
+	Según mes Hacer
+		01:mesFinal="Enero"
+		02:mesFinal="Febrero"
+		03:mesFinal="Marzo"
+		04:mesFinal="Abril"
+		05:mesFinal="Mayo"
+		06:mesFinal="Junio"
+		07:mesFinal="Julio"
+		08:mesFinal="Agosto"
+		09:mesFinal="Septiembre"
+		10:mesFinal="Octubre"
+		11:mesFinal="Noviembre"
+		12:mesFinal="Diciembre"
+	FinSegun
+	
+	Mostrar "Su fecha ingresada es: " día ", de  " mesFinal ", del " año
+	
+FinAlgoritmo
