@@ -1,0 +1,190 @@
+Inge buenas, de nuevo no pude terminar el código, me emocioné intentando añadir todo lo que tenía en mente pero algunas cosas no me compilaban
+
+Algoritmo Boleta_Pago
+	
+	Definir nombre, cargo Como Caracter
+	Definir fechaIngreso Como Caracter
+	Definir díaActual, MesActual, AñoActual como Entero
+	Definir horasExtrasDiurnas, horasExtrasNocturnas, horasExtrasDominicales Como Entero
+	Definir aporteNacionalSolidario, facturasSolicitadas como Entero
+	Definir respuestaHorasExtras Como Caracter
+	Definir horasExtraTrabajadas Como Entero
+	Definir carnetIdentidad, haberBásico, añosAntigüedad como Entero
+	Definir día, mes como Caracter
+	
+	Escribir "Ingrese su nombre completo"
+	Leer nombre
+	
+	Escribir "Ingrese su número de carnet de identidad"
+	Leer carnetIdentidad
+	
+	Escribir "Ingrese el cargo que ejerce"
+	Leer cargo
+	
+	Escribir "Ingrese su fecha de ingreso (Día/Mes/Año) (XX/XX/XXXX)"
+	Leer fechaIngreso
+	
+	día=SubCadena(fechaIngreso,1,2)
+	
+	mes=SubCadena(fechaIngreso,4,5)
+	mesNumeral=ConvertiraNumero(mes)
+	
+	Mientras mesNumeral<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Ingrese su mes de ingreso (Ej. 08)"
+		Leer mesNumeral
+	FinMientras
+	
+	Mientras mesNumeral>12 Hacer
+		Mostrar "ERROR. EL AÑO NO CUENTA CON MÁS DE 12 MESES"
+		Escribir "Ingrese su mes de ingreso (Ej. 08)"
+		Leer mesNumeral
+	FinMientras
+	
+	Según mesNumeral Hacer
+		01:mesIngreso="Enero"
+		02:mesIngreso="Febrero"
+		03:mesIngreso="Marzo"
+		04:mesIngreso="Abril"
+		05:mesIngreso="Mayo"
+		06:mesIngreso="Junio"
+		07:mesIngreso="Julio"
+		08:mesIngreso="Agosto"
+		09:mesIngreso="Septiembre"
+		10:mesIngreso="Octubre"
+		11:mesIngreso="Noviembre"
+		12:mesIngreso="Diciembre"
+	FinSegún
+	
+	año=SubCadena(fechaIngreso,7,10)
+	
+	añoNumeral=ConvertiraNumero(año)
+	
+	Mientras añoNumeral<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS"
+		Escribir "Ingrese su año de ingreso (Ej. 2004)"
+		Leer añoNumeral
+	FinMientras
+	
+	Escribir "Ingrese su haber básico (sueldo) cuando ingresó a la empresa o institución en la que trabaja"
+	
+	Leer haberBásico
+	
+	Mientras haberBásico<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS. Ingrese su haber básico (sueldo) cuando ingresó a la empresa o institución en la que trabaja"
+		Leer haberBásico
+	FinMientras
+	
+	Si haberBásico<13000 Entonces
+		aporteNacionalSolidario=haberBásico*0.005
+	SiNo
+		Si haberBásico>=13000 y haberBásico<25000 Entonces
+			aporteNacionalSolidario=(haberBásico-13000)*0.01
+		SiNo
+			Si haberBásico>=25000 y haberBásico<35000 Entonces
+				aporteNacionalSolidario=((haberBásico-25000)*0.05)+((haberBásico-13000)*0.01)
+			Sino 
+				Si haberBásico>=35000 Entonces
+					aporteNacionalSolidario=((haberBásico-35000)*0.10)+((haberBásico-25000)*0.05)+((haberBásico-13000)*0.01)
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	SI haberBásico>=1300 Entonces
+		Escribir "Ingrese el monto en facturas que acumuló en relación a su haber básico (sueldo)"
+		Leer facturasSolicitadas
+	FinSi
+	
+	Escribir "Ingrese sus años de antigüedad en la empresa o institución en la que trabaja"
+	Leer añosAntigüedad
+	
+	Mientras añosAntigüedad<0 Hacer
+		Mostrar "ERROR. EL PROGRAMA NO PERMITE NÚMEROS NEGATIVOS. Ingrese sus años de antigüedad en la empresa o institución en la que trabaja"
+		Leer añosAntigüedad
+	FinMientras
+	
+	//Si los años de antigüedad son menores a 2, entonces tiene un bono adicional por antigüedad del 0%
+	Si añosAntigüedad<2 Entonces
+		bonoAntigüedad=0
+	Sino
+		//Si los años de antigüedad son mayores o iguales a 2 pero menores a 5, entonces tiene un bono adicional por antigüedad del 5%
+		Si añosAntigüedad>=2 y añosAntigüedad<5 Entonces
+			bonoAntigüedad=haberBásico*0.05
+		Sino
+			//Si los años de antigüedad son mayores o iguales a 5 pero menores a 8, entonces tiene un bono adicional por antigüedad del 11%
+			Si añosAntigüedad>=5 y añosAntigüedad<8 Entonces
+				bonoAntigüedad=haberBásico*0.11
+			SiNo
+				//Si los años de antigüedad son mayores o iguales a 8 pero menores a 11, entonces tiene un bono adicional por antigüedad del 18%
+				Si añosAntigüedad>=8 y añosAntigüedad<11 Entonces
+					bonoAntigüedad=haberBásico*0.18
+				Sino
+					//Si los años de antigüedad son mayores o iguales a 11 pero menores a 15, entonces tiene un bono adicional por antigüedad del 26%
+					Si añosAntigüedad>=11 y añosAntigüedad<15 Entonces
+						bonoAntigüedad=haberBásico*0.26
+					Sino
+						//Si los años de antigüedad son mayores o iguales a 15 pero menores a 20, entonces tiene un bono adicional por antigüedad del 34%
+						Si añosAntigüedad>=15 y añosAntigüedad<20 Entonces
+							bonoAntigüedad=haberBásico*0.34
+						Sino
+							//Si los años de antigüedad son mayores o iguales a 20 pero menores a 25, entonces tiene un bono adicional por antigüedad del 42%
+							Si añosAntigüedad>=20 y añosAntigüedad<25 Entonces
+								bonoAntigüedad=haberBásico*0.42
+							Sino
+								//Si los años de antigüedad son mayores a 25, entonces tiene un bono adicional por antigüedad del 50%
+								Si añosAntigüedad>=25 Entonces
+									bonoAntigüedad=haberBásico*0.5
+								FinSi
+							FinSi
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+	Escribir "Ingrese cuántas horas extras diurnas realizó entre semana (Lunes a Sábados)"
+	Leer horasExtrasDiurnas
+	
+	Si horasExtrasDiurnas>0 Entonces
+		montoHorasExtrasDiurnas=(haberBásico/horasTrabajadas)*0.01
+	Sino
+		montoHorasExtrasDiurnas=0
+	FinSi
+	
+	Escribir "Ingrese cuántas horas extras nocturnas realizó entre semana (Lunes a Sábados)"
+	Leer horasExtrasNocturnas
+	
+	Si horasExtrasNocturnas>0 Entonces
+		montoHorasExtrasNocturnas=(haberBásico/horasTrabajadas)*0.0125
+	Sino
+		montoHorasExtrasNocturnas=0
+	FinSi
+	
+	Escribir "Ingrese cuántas horas extras realizó los domingos"
+	Leer horasExtrasDominicales
+	
+	Si horasExtrasDominicales>0 Entonces
+		montoHorasExtrasDominicales=(haberBásico/horasTrabajadas)*0.02
+	Sino
+		montoHorasExtrasDominicales=0
+	FinSi
+	
+	montoTotalHorasExtras=montoHorasExtrasDiurnas+montoHorasExtrasNocturnas+montoHorasExtrasDominicales
+	totalIngresos=haberBásico+montoTotalHorasExtras
+	rcIVA=(totalIngresos-facturasSolicitadas)*0.13
+	descuentoaFP=totalIngresos*0.1271
+	totalEgresos=descuentoAFP+rcIVA+aporteNacionalSolidario
+	líquidoPagable=totalIngresos-totalEgresos
+	
+	Mostrar nombre
+	Mostrar carnetIdentidad
+	Mostrar cargo
+	Mostrar fechaIngreso
+	Mostrar "Su sueldo es igual a: " haberBásico
+	Mostrar "Su total de ingresos es igual a: " totalIngresos
+	Mostrar "Su total de Egresos es igual a: " totalEgresos
+	Mostrar "Su líquido pagable es igual a: " líquidoPagable
+	
+FinAlgoritmo
